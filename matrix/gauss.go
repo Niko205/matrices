@@ -40,11 +40,7 @@ func (m Matrix) EliminateAbove(row int) {
 // UpperTriangular führt die Gauß-Elimination für alle Zeilen der Matrix durch.
 // So entsteht im linken Bereich eine obere Dreiecksmatrix, bei der die Diagonalelemente 1 sind.
 func (m Matrix) UpperTriangular() {
-	for i := range m {
-		m.Normalize(i)
-		m.EliminateBelow(i)
-	}
-	fixZeros(m)
+	// TODO
 }
 
 // HINT
