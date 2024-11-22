@@ -4,11 +4,11 @@ package matrix
 // Falls das Diagonalelement [col][col] nicht 0 ist, wird die Zeile durch das Diagonalelement normiert.
 // D.h. die gesamte Zeile col wird durch das Diagonalelement geteilt.
 func (m Matrix) Normalize(col int) {
-	// TODO
+	m.ScalarMultRow(col, 1/m[col][col])
 }
 
 // EliminateBelow erwartet eine Zeilennummer `row`.
-// Multipliziert alle Zeilen unter der Zeile row mit -1/Matrix[row][row] und addiert sie zur Zeile row.
+// Multipliziert alle Zeilen unter der Zeile row mit -1/Matrix[i][row] und addiert sie zur Zeile row.
 // Dadurch wird jeweils das Element unter dem Diagonalelement 0.
 // Voraussetzung: Die Zeile row ist bereits normiert, d.h. das Diagonalelement ist 1.
 func (m Matrix) EliminateBelow(row int) {
@@ -16,7 +16,7 @@ func (m Matrix) EliminateBelow(row int) {
 }
 
 // EliminateAbove erwartet eine Zeilennummer `row`.
-// Multipliziert alle Zeilen über der Zeile row mit -1/Matrix[row][row] und addiert sie zur Zeile row.
+// Multipliziert alle Zeilen über der Zeile row mit -1/Matrix[i][row] und addiert sie zur Zeile row.
 // Dadurch wird jeweils das Element über dem Diagonalelement 0.
 // Voraussetzung: Die Zeile row ist bereits normiert, d.h. das Diagonalelement ist 1.
 func (m Matrix) EliminateAbove(row int) {
