@@ -1,6 +1,6 @@
 package matrix
 
-import "matrices/matrixtools"
+import matrixtools "matrices/matrixtools_done"
 
 type Row = []float64
 type Col = []float64
